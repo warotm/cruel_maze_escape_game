@@ -1,9 +1,10 @@
-import pygame as pg
-from pathlib import Path
 import random
+from pathlib import Path
 
-window_w = 1280
-window_h = 1024
+import pygame as pg
+
+window_w = 800
+window_h = 800
 
 map_paths = list(Path("maps").glob("*.png"))
 
@@ -158,7 +159,7 @@ class Game:
 
     def draw_text(self):
         FONT = pg.font.SysFont("notosans", 42)
-        BIG_FONT = pg.font.SysFont("notosans", 84)
+        BIG_FONT = pg.font.SysFont("notosans", 56)
         TEXT_COLOR = (42, 42, 42)
         BG_COLOR = (200, 200, 200)
         if self.start_time and not self.is_game_end:
@@ -169,7 +170,7 @@ class Game:
             self.screen.blit(FONT.render(message, True, TEXT_COLOR), (200, 20))
         if self.is_game_end:
             if self.is_game_win:
-                message = "(~^^)~ Yay you WIN in {}s | SPD {} ~(^^~)".format(
+                message = "(~^^)~ Yay WIN in {}s | SPD {} ~(^^~)".format(
                     (self.current_time - self.start_time) / 1000,
                     self.rotation_speed,
                 )
@@ -195,7 +196,7 @@ class Game:
 
 if __name__ == "__main__":
     pg.init()
-    pg.display.set_caption('CRUEL MAZE ESCAPE')
+    pg.display.set_caption("CRUEL MAZE ESCAPE")
     game = Game()
     game.run()
     pg.quit()

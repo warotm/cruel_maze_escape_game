@@ -8,10 +8,18 @@ It need only Python and PyGame library to run this one.
 
 If you are using school's computers.
 
-> python3 -m pip install pygame
+```bash
+python3 -m pip install pygame
+```
 
 ## To run
 
-> python3 game.py
+```bash
+python3 game.py
+```
 
 Have fun.
+
+## Add more maps
+
+Custom maps, as .PNG images with transparent background, can be added into `maps` folder.
